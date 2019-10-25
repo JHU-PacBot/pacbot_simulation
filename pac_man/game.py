@@ -1,5 +1,5 @@
-from pac_man.graphics import *
-from pac_man.gameState import *
+from graphics import *
+from gameState import *
 import schedule
 
 game_state = GameState()
