@@ -1,5 +1,5 @@
-from .variables import *
-from .grid import *
+from variables import *
+from grid import *
 
 class PacBot:
 
