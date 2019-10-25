@@ -1,4 +1,4 @@
-from pac_man.gameState import *
+from gameState import *
 import pygame
 
 red_hue = (255, 0, 0)
