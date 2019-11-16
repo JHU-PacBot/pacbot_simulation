@@ -1,5 +1,6 @@
 from variables import *
 from grid import *
+import random
 
 class PacBot:
 
@@ -26,6 +27,22 @@ class PacBot:
 
 # algorithm to make pac-man move
     def move(self, game_state):
+        l_move = (self.pos[0] - 1, self.pos[1])
+        r_move = (self.pos[0] + 1, self.pos[1])
+        u_move = (self.pos[0], self.pos[1] + 1)
+        d_move = (self.pos[0], self.pos[1] - 1)
+        moves = list()
+        if grid[l_move[0]][l_move[1]] != I and grid[l_move[0]][l_move[1]] != n and self.direction != right:
+            moves.append(left)
+        if grid[r_move[0]][r_move[1]] != I and grid[r_move[0]][r_move[1]] != n and self.direction != left:
+            moves.append(right)
+        if grid[u_move[0]][u_move[1]] != I and grid[u_move[0]][u_move[1]] != n and self.direction != down:
+            moves.append(up)
+        if grid[d_move[0]][d_move[1]] != I and grid[d_move[0]][d_move[1]] != n and self.direction != up:
+            moves.append(down)
+
+        self.direction = random.choice(moves)
+
         save = self.pos
         if self.direction == left:
             self.pos = (self.pos[0] - 1, self.pos[1])
@@ -38,4 +55,3 @@ class PacBot:
 
         if grid[self.pos[0]][self.pos[1]] == I or grid[self.pos[0]][self.pos[1]] == n:
             self.pos = save
-

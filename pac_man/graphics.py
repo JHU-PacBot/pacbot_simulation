@@ -77,12 +77,12 @@ def print_pac_man(game_display, game_state):
 def print_score_and_lives(game_display, game_state):
     font = pygame.font.Font('freesansbold.ttf', 18)
 
-    score_text = font.render("Score: " + str(game_state.score), True, yellow_hue, blue)
+    score_text = font.render("Score: " + str(game_state.score), True, yellow_hue, blue_hue)
     score_text_rect = score_text.get_rect()
     score_text_rect.center = (50, 300)
     game_display.blit(score_text, score_text_rect)
 
-    lives_text = font.render("Lives: " + str(game_state.lives), True, yellow_hue, blue)
+    lives_text = font.render("Lives: " + str(game_state.lives), True, yellow_hue, blue_hue)
     lives_text_rect = lives_text.get_rect()
     lives_text_rect.center = (510, 300)
     game_display.blit(lives_text, lives_text_rect)

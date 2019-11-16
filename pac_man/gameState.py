@@ -68,8 +68,8 @@ class GameState:
 
     def _end_game(self):
         self.play = False
-        print("Sore: " + str(self.score))
-        print("Time: " + str(self.elapsed_time))
+        self.kill = True
+        print("Score: " + str(self.score))
 
     def _die(self):
         if self.lives > 1:
@@ -165,6 +165,7 @@ class GameState:
         self._respawn_agents()
         self.score = 0
         self.play = False
+        self.kill = False
         self.start_counter = 0
         self.state_counter = 0
         self.update_ticks = 0
